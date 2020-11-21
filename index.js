@@ -15,5 +15,12 @@ const resetBtn = document.getElementById("resetBtn");
 rollBtn.addEventListener('click', createRandomNumber)
  
 function createRandomNumber () {
-console.log(Math.floor(Math.random() * 6 + 1));
+const randomNumber = Math.floor(Math.random() * 6 + 1);
+
+if (player1Turn) {
+    console.log(`player 1 rolled ${randomNumber}`);
+} else 
+    console.log(`player 2 rolled ${randomNumber}`); 
+    
+    player1Turn = !player1Turn
 }
