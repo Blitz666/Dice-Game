@@ -2,6 +2,8 @@
 let player1Score = 0
 let player2Score = 0
 let player1Turn = true
+let player1Total = 0
+let player2Total = 0
 
 // Create variables to store references to the necessary DOM nodes
 const playerTurn = document.getElementById("message");
@@ -11,6 +13,9 @@ const player1Dice = document.getElementById("player1Dice");
 const player2Dice = document.getElementById("player2Dice");
 const rollBtn = document.getElementById("rollBtn");
 const resetBtn = document.getElementById("resetBtn"); 
+const player1TotalScore = document.getElementById("player1Total")
+const player2TotalScore = document.getElementById("player2Total")
+
 
 function changeRollResetBtn() {
 rollBtn.style.display = "none";
@@ -53,9 +58,13 @@ if (player1Turn) {
 
 if (player1Score >= 20) {
     message.textContent = "Player 1 has won! 🥳"
+    player1Total += 1;
+    player1TotalScore.textContent = player1Total;
     changeRollResetBtn()
 } else if (player2Score >= 20) {
     message.textContent = "Player 2 has won! 🎉"
+    player2Total += 1;
+    player2TotalScore.textContent = player2Total;
     changeRollResetBtn()
 }
  
