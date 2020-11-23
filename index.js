@@ -26,7 +26,7 @@ const randomNumber = Math.floor(Math.random() * 6 + 1);
 if (player1Turn) {
     // console.log(`player 1 rolled ${randomNumber}`);
     
-    player1Dice.innerText = randomNumber;
+    player1Dice.textContent= randomNumber
     
     player1Dice.classList.remove('active');
     player2Dice.classList.add('active');
@@ -73,12 +73,23 @@ rollBtn.style.display = "block";
 resetBtn.style.display = "none";
 player1Score = 0
 player2Score = 0
-player1Turn = true
-message.innerText = "Player 1 Turn";
+player1Turn = !player1Turn;
+checkTurn();
 player1Scoreboard.textContent = player1Score;
 player2Scoreboard.textContent = player2Score;
 player1Dice.innerText = "-";
 player2Dice.innerText = "-";
-player1Dice.classList.add('active');
-player2Dice.classList.remove('active');
+}
+
+function checkTurn() {
+    if (player1Turn) {
+        message.innerText = "Player 1 Turn"
+        player1Dice.classList.remove('active');
+        player2Dice.classList.add('active');
+    } else {
+        message.innerText = "Player 2 Turn";
+        player1Dice.classList.add('active');
+        player2Dice.classList.remove('active');
+    }
+
 }

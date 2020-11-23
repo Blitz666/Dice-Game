@@ -62,14 +62,11 @@ button {
 #resetBtn {
   background-color: var(--color-4);
   transform: translateX(50%);
+  display: none;
 }
 
 button:focus {
   outline: none;
-}
-
-#resetBtn {
-  display: none;
 }
 
 .active {
