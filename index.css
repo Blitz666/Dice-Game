@@ -56,10 +56,12 @@ button {
 
 #rollBtn {
   background-color: var(--color-5);
+  transform: translateX(65%);
 }
 
 #resetBtn {
   background-color: var(--color-4);
+  transform: translateX(50%);
 }
 
 button:focus {
