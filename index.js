@@ -31,7 +31,7 @@ const randomNumber = Math.floor(Math.random() * 6 + 1);
 if (player1Turn) {
     // console.log(`player 1 rolled ${randomNumber}`);
     
-    player1Dice.textContent= randomNumber
+    player1Dice.src= `images/${randomNumber}.png`
     
     player1Dice.classList.remove('active');
     player2Dice.classList.add('active');
@@ -44,7 +44,7 @@ if (player1Turn) {
 } else {
     // console.log(`player 2 rolled ${randomNumber}`); 
     
-    player2Dice.innerText = randomNumber;
+    player2Dice.src= `images/${randomNumber}.png`
     
     player1Dice.classList.add('active');
     player2Dice.classList.remove('active');
@@ -86,8 +86,8 @@ player1Turn = !player1Turn;
 checkTurn();
 player1Scoreboard.textContent = player1Score;
 player2Scoreboard.textContent = player2Score;
-player1Dice.innerText = "-";
-player2Dice.innerText = "-";
+player1Dice.src = "images/RtD.png";
+player2Dice.src = "images/RtD.png";
 }
 
 function checkTurn() {
